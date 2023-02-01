@@ -41,4 +41,62 @@
 }
 .container li p:nth-child(2) {
   width: 100%;
+}
+
+li:hover {
+  background: rgb(43, 8, 168);
+}
+
+.popup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  height: 500px;
+  width: 500px;
+  padding: 20px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  background: rgb(4, 2, 24);
+  box-shadow: 0 0 20px rgba(4, 6, 29, 0.479);
+  transition: 0.3s;
+}
+.popup p {
+  display: flex;
+  align-items: center;
+  color: white;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+}
+.popup p:nth-child(1) {
+  width: 435px;
+  height: 435px;
+  border-radius: 50%;
+  justify-content: center;
+  font-weight: bold;
+  border: 1px solid rgba(231, 231, 231, 0.295);
+  font-size: 10em;
+}
+.popup p:nth-child(2) {
+  width: 100%;
+  height: 45px;
+  justify-content: center;
+}
+.popup strong {
+  font-weight: normal;
+}
+.popup.remove {
+  height: 0 !important;
+  width: 0 !important;
+  padding: 0 !important;
+}
+.popup.remove p {
+  opacity: 0;
 }/*# sourceMappingURL=part-2.css.map */
