@@ -33,6 +33,7 @@ main input {
   background: none;
   color: white;
   transition: 0.3s all linear;
+  text-transform: capitalize;
 }
 main label {
   color: white;

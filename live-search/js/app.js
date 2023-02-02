@@ -1,23 +1,18 @@
 const inputField = document.getElementById("search-bar")
 const container = document.getElementById("container")
 /**
- * Make substring bold (need to refine it)
- * @param {string} string String
- * @param {substring} substring string to check in String
- * @returns string
+ * Make substring bold
+ * @param {string} string_ String
+ * @param {string} substring string to check in String
+ * @returns {string}
  */
-function handleReplace(string, substring) {
-    const lower = string.toLowerCase()
-    const index = lower.indexOf(substring)
-    const last = index + substring.length
-    let word = ''
-    if (index === 0) {
-        word = "<strong>" + string.substr(index, last) + "</strong>" + string.substr(last)
-    } else {
-        word = string.substr(null, index) + "<strong>" + string.substr(index, substring.length - 1) + "</strong>" + string.substr(last)
-    }
-    // console.log(string, substring, word)
-    return word
+function handleReplace(string_, substring, message) {
+    const lower_string = string_.toLowerCase()
+    const l_index = lower_string.indexOf(substring.toLowerCase())
+    const h_index = l_index + substring.length
+    const substring_ = string_.substring(l_index, h_index)
+    // console.log(l_index, h_index, substring_, string_)
+    return string_.replace(substring_, `<strong>${substring_}</strong>`)
 }
 
 inputField.addEventListener("input", async () => {
@@ -33,17 +28,18 @@ inputField.addEventListener("input", async () => {
                 let fname = i[1]
                 let lname = i[2]
                 if (fname.toLowerCase().includes(inputValue.toLowerCase())) {
-                    // console.log("HPLY")
-                    fname = handleReplace(fname, inputValue) // Making the portion user typed bold
+                    fname = handleReplace(fname, inputValue, 'fname')
+                } else if(lname.toLowerCase().includes(inputValue.toLowerCase())){
+                    lname = handleReplace(lname, inputValue, 'lname')
                 }
-                if(lname.toLowerCase().includes(inputValue.toLowerCase())) {
-                    // console.log("2")
-                    lname = handleReplace(lname, inputValue) // Same as above
-                }
+
                 container.innerHTML += `
                 <li onclick='popup(this)'>
                     <p class="profile">${small.toUpperCase()}</p>
-                    <p class="fullname">${lname}, ${fname}</p>
+                    <p class="fullname">
+                        <span>${lname}, </span>
+                        <span>${fname}</span>
+                    </p>
                 </li>
                 `
             }

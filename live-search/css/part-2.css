@@ -41,6 +41,7 @@
 }
 .container li p:nth-child(2) {
   width: 100%;
+  gap: 1.5px;
 }
 
 li:hover {
@@ -88,6 +89,7 @@ li:hover {
   width: 100%;
   height: 45px;
   justify-content: center;
+  gap: 1.5px;
 }
 .popup strong {
   font-weight: normal;
@@ -96,6 +98,7 @@ li:hover {
   height: 0 !important;
   width: 0 !important;
   padding: 0 !important;
+  top: 600px;
 }
 .popup.remove p {
   opacity: 0;
