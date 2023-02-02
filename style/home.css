@@ -1,0 +1,42 @@
+main{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    height: 180px;
+    width: 440px;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+main h3 {
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+main div {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+}
+
+main a {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: none;
+    background: rgb(28, 22, 107);
+    color: white;
+    border-radius: 10px;
+    
+    transition: 0.3s all linear;
+}
+
+main a:hover {
+    background: rgba(32, 25, 119, 0.452);
+}
